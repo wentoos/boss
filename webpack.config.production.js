@@ -11,11 +11,8 @@ module.exports = {
   entry: {
     vendor: [
       "react",
-      "mobx",
-      "mobx-react",
       "react-dom",
-      "react-router",
-      "whatwg-fetch"
+      "react-router"
     ],
     app: ["./src/index"]
   },

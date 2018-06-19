@@ -1,26 +1,15 @@
-import("./styles/main.scss");
+
 import React from "react";
 import {render} from "react-dom";
-import {BrowserRouter as Router} from "react-router-dom";
-import {Provider} from "mobx-react";
-import {AppContainer} from "react-hot-loader";
-import {rehydrate, hotRehydrate} from "rfx-core";
 
-import {isProduction} from "./utils/constants";
-import App from "./components/App";
-import stores from "./stores/stores";
-
-const store = rehydrate();
-
+class App extends React.PureComponent {
+    render() {
+        return <div>ha2hah</div>
+    }
+}
 const renderApp = Component => {
   render(
-    <AppContainer>
-      <Router>
-        <Provider store={isProduction ? store : hotRehydrate()}>
-          <App/>
-        </Provider>
-      </Router>
-    </AppContainer>,
+      <Component />,
     document.getElementById("root")
   );
 };

@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const isDebug = process.env.NODE_ENV === 'development'
 
 module.exports = {
-  mode: isDebug ? 'development' : 'production',
+  mode: isDebug? 'development' : 'production',
   entry: {
     app: [
       "./src/index"
@@ -15,17 +15,13 @@ module.exports = {
       "mobx-react",
       "react-dom",
       "react-router",
-      "whatwg-fetch"
     ]
   },
-  devServer: {
+  serve: {
     hot: true,
-    contentBase: path.resolve(__dirname, "dist"),
     port: 3000,
     host: "0.0.0.0",
-    publicPath: "/",
-    historyApiFallback: true,
-    disableHostCheck: true
+
   },
   output: {
     path: path.join(__dirname, "dist"),
@@ -107,9 +103,6 @@ module.exports = {
       }
     }
   },
-  // performance: {
-  //   hints: true
-  // },
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
@@ -117,3 +110,11 @@ module.exports = {
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /nb/)
   ]
 };
+
+  module.exports.serve = {
+    // 配置监听端口，默认值 8080
+    port: 3000,
+    open: true,
+    hot: true,
+    host: "0.0.0.0"
+  }
