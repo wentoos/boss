@@ -23,9 +23,13 @@ module.exports = {
     chunkFilename: "assets/[name].[chunkhash].js"
   },
   devtool: 'source-map',
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".css", ".less", ".json"],
+    modules: [path.resolve(__dirname, "src"), "node_modules"]
+  },
   optimization: {
     runtimeChunk: {
-      name: 'manifest'
+      name: 'mainfest'
     },
     minimizer: [
       new UglifyJsPlugin({
@@ -66,6 +70,11 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        loader: "babel-loader!ts-loader"
+      },
       {
         test: /\.js$/,
         include: path.join(__dirname, "src"),

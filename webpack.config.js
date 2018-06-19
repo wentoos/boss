@@ -11,17 +11,12 @@ module.exports = {
     ],
     vendor: [
       "react",
-      "mobx",
-      "mobx-react",
       "react-dom",
-      "react-router",
     ]
   },
-  serve: {
-    hot: true,
-    port: 3000,
-    host: "0.0.0.0",
-
+  devServer: {
+    port: 9000, //端口改为9000
+    open: true // 自动打开浏览器，适合懒人
   },
   output: {
     path: path.join(__dirname, "dist"),
@@ -29,8 +24,17 @@ module.exports = {
     filename: "app.[hash].js"
   },
   devtool: "cheap-eval-source-map",
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".css", ".less", ".json"],
+    modules: [path.resolve(__dirname, "src"), "node_modules"]
+  },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        loader: "babel-loader!ts-loader"
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -83,7 +87,7 @@ module.exports = {
   },
   optimization: {
     runtimeChunk: {
-      name: 'manifest'
+      name: 'mainfest'
     },
     splitChunks: {
       chunks: 'async',
@@ -110,11 +114,3 @@ module.exports = {
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /nb/)
   ]
 };
-
-  module.exports.serve = {
-    // 配置监听端口，默认值 8080
-    port: 3000,
-    open: true,
-    hot: true,
-    host: "0.0.0.0"
-  }
