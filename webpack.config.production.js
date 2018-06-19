@@ -42,7 +42,7 @@ module.exports = {
       }),
       new OptimizeCSSAssetsPlugin({})
     ],
-    splitChunks:{
+    splitChunks: {
       chunks: 'async',
       minSize: 30000,
       minChunks: 1,
