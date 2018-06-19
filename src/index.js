@@ -1,10 +1,10 @@
 
-import React from "react";
+import * as React from "react";
 import {render} from "react-dom";
 
 class App extends React.PureComponent {
     render() {
-        return (<div>ha   s 2dsdsd ah</div>)
+        return (<div>has2dsdsdah</div>)
     }
 }
 const renderApp = Component => {
