@@ -13,6 +13,12 @@ class App extends React.PureComponent {
     btn(){
       this.setState({a:this.state.a + 1})
     }
+    componentDidMount(){
+      //禁用浏览器下拉
+      document.addEventListener('touchmove', function (event) {
+        event.preventDefault();
+      }, false);
+    }
     render() {
         return (
           <div>
