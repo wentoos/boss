@@ -1,0 +1,22 @@
+:root{
+--bacColors:#dcdcdc;
+
+}
+.select-button-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* cursor: pointer; */
+    height: 100%;
+    width: 100%;
+    /* background: red; */
+    height: 44px;
+    font-size: 12px;
+    border-bottom: 1px solid #dcdcdc
+}
+.select-button-right-split{
+    width: 1px;
+    height: 15px;
+    background: var(--bacColors);
+    float: right;
+}

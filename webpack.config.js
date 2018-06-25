@@ -16,6 +16,7 @@ module.exports = {
   },
   devServer: {
     port: 9000, //端口改为9000
+    host: '192.168.1.111',
     open: true // 自动打开浏览器，适合懒人
   },
   output: {

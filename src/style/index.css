@@ -1,0 +1,46 @@
+@import url('./selectButton.css');
+@import url('./font-awesome.min.css');
+:root{
+--Colors:#797979;
+}
+html,body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select,{margin:0;padding:0} 
+*{
+    box-sizing: border-box;
+    color:#797979;
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+input {      
+        -webkit-user-select:auto; /*webkit浏览器*/     
+}
+.flex{
+    display:flex
+}
+body{
+    font:12px"宋体",
+    "Arial Narrow",HELVETICA;
+    background:#fff;
+    -webkit-text-size-adjust:100%;
+} 
+:focus {
+    outline: none;
+}
+
+
+a{color:#2d374b;text-decoration:none} 
+/* a:hover{color:#cd0200;text-decoration:underline}  */
+em{font-style:normal} 
+li{list-style:none} 
+img{border:0;vertical-align:middle} 
+table{border-collapse:collapse;border-spacing:0} 
+p{word-wrap:break-word}
+html,body{
+    height: 100%;
+    width: 100%;
+    /* background: #2d374b; */
+
+}
