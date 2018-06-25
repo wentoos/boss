@@ -12,7 +12,8 @@
     /* background: red; */
     height: 44px;
     font-size: 12px;
-    border-bottom: 1px solid #dcdcdc
+    border-bottom: 1px solid #dcdcdc;
+    
 }
 .select-button-right-split{
     width: 1px;

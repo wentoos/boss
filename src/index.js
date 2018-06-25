@@ -15,9 +15,9 @@ class App extends React.PureComponent {
     }
     componentDidMount(){
       //禁用浏览器下拉
-      document.addEventListener('touchmove', function (event) {
-        event.preventDefault();
-      }, false);
+      // document.addEventListener('touchmove', function (event) {
+      //   event.preventDefault();
+      // }, false);
     }
     render() {
         return (
