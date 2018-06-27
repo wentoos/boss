@@ -1,7 +1,8 @@
 
 import React from "react";
 import {render} from "react-dom";
-import SelectButton from './common'
+// import SelectButton from './common'
+import DropDown from './common/dropDown'
 import './style/index.css'
 class App extends React.PureComponent {
     constructor(){
@@ -22,7 +23,7 @@ class App extends React.PureComponent {
     render() {
         return (
           <div>
-            <SelectButton/>
+            <DropDown/>
           </div>
         )
 
