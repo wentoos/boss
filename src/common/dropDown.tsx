@@ -2,47 +2,66 @@
  * @Author: Wentoo Yu 
  * @Date: 2018-06-25 10:16:45 
  * @Last Modified by: Wentoo Yu
- * @Last Modified time: 2018-06-27 14:39:40
+ * @Last Modified time: 2018-06-28 10:45:57
  */
-import { Transition } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 // var Transition = require('react-transition-group/Transition') ;
 import * as React from 'react'
 
 
 
-const defaultStyle= {
+const defaultStyle = {
     transition: `opacity 300ms ease-in-out`,
     opacity: 0,
+    transform: 'translate3d(0, -100 %, 0)'
 }
 
-const transitionStyles:any= {
+const transitionStyles: any = {
     entering: { opacity: 0 },
     entered: { opacity: 1 },
 };
 
 
 class dropDown extends React.PureComponent {
-    state={
-        in:false
+    state = {
+        in: false
+    }
+    componentWillMount() {
+        // setTimeout(()=>this.setState({in:true}))
+
+    }
+    componentDidMount() {
+        this.setState({ in: true })
     }
     render() {
         return (
             <div>
-                <button onClick={()=>this.setState({in:!this.state.in})}>
+                <button onClick={() => this.setState({ in: !this.state.in })}>
                     cat
                 </button>
-                <Transition in={this.state.in} timeout={500}>
-                    {(state:string) => (
-                        <div style={{
-                            ...defaultStyle,
+                <CSSTransition in={this.state.in} timeout={500}
+                    classNames={{
+                        appear: 'hide',
+                        appearActive: 'hide',
+                        enter: 'hide',
+                        enterActive: 'show fadeInDown animated',
+                        enterDone: 'show',
+                        exit: 'show',
+                        exitActive: 'show fadeOutUp animated',
+                        exitDone: 'hide',
+                    }}
+                >
+                    {(state: string) => (
+                        <div className='hide' style={{
+                            // ...defaultStyle,
                             ...transitionStyles[state]
                         }}>
-                            I'm a fade Transition!!!!!
-                </div>
+                            <div style={{ background: 'red', height: '100px' }}></div>
+                        </div>
                     )}
-                </Transition>
+                </CSSTransition>
             </div>
-            
+
         );
     }
 }

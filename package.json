@@ -55,9 +55,9 @@
   },
   "dependencies": {
     "@types/react": "^16.4.0",
-    "@types/react-addons-css-transition-group": "^15.0.4",
     "@types/react-dom": "^16.0.6",
     "@types/react-transition-group": "^2.0.11",
+    "animate.css": "^3.6.1",
     "axios": "^0.16.2",
     "css-declaration-sorter": "^2.0.0",
     "css-mqpacker": "^6.0.1",
@@ -68,7 +68,6 @@
     "postcss-cssnext": "^3.0.2",
     "pushstate-server": "^3.0.1",
     "react": "^16.4.1",
-    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^2.3.1"

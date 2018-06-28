@@ -1,5 +1,6 @@
 @import url('./selectButton.css');
 @import url('./font-awesome.min.css');
+@import url('../../node_modules/animate.css/animate.css');
 :root{
 --Colors:#797979;
 }
@@ -60,4 +61,12 @@ html,body{
 .example-leave.example-leave-active {
   opacity: 0.01;
   transition: opacity 300ms ease-in;
+}
+.hide{
+    display: none;
+    animation-duration:.5s;
+}
+.show{
+    display: block;
+    animation-duration:.5s;
 }
