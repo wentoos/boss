@@ -1,17 +1,14 @@
 /*
  * @Author: Wentoo Yu 
  * @Date: 2018-06-25 10:16:45 
- * @Last Modified by: Wentoo Yu
- * @Last Modified time: 2018-06-28 10:47:33
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-06-28 16:18:15
  */
 import { CSSTransition } from 'react-transition-group';
 import * as React from 'react'
 
 
-const transitionStyles: any = {
-    entering: { opacity: 0 },
-    entered: { opacity: 1 },
-};
+
 
 
 class dropDown extends React.PureComponent {
@@ -43,10 +40,8 @@ class dropDown extends React.PureComponent {
                         exitDone: 'hide',
                     }}
                 >
-                    {(state: string) => (
-                        <div className='hide' style={{
-                            ...transitionStyles[state]
-                        }}>
+                    {() => (
+                        <div className='hide'>
                             <div style={{ background: 'red', height: '100px' }}></div>
                         </div>
                     )}
