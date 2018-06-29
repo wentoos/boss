@@ -1,7 +1,7 @@
 
 import React from "react";
 import {render} from "react-dom";
-// import SelectButton from './common'
+import SelectButton from './common'
 import DropDown from './common/dropDown'
 import NavBar from './common/NavBar'
 import './style/index.css'
@@ -25,6 +25,7 @@ class App extends React.PureComponent {
         return (
           <div>
             <NavBar/>
+            <SelectButton/>
             <DropDown/>
           </div>
         )
