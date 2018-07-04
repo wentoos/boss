@@ -3,7 +3,7 @@ import React from "react";
 import {render} from "react-dom";
 import SelectButton from './common'
 import DropDown from './common/dropDown'
-import NavBar from './common/NavBar'
+import Job from './page/Job'
 import './style/index.css'
 
 
@@ -26,9 +26,7 @@ class App extends React.PureComponent {
     render() {
         return (
           <div>
-            <NavBar/>
-            <SelectButton/>
-            <DropDown/>
+            <Job/>
           </div>
         )
 

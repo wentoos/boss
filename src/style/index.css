@@ -2,6 +2,7 @@
 @import url('./font-awesome.min.css');
 @import url('../../node_modules/animate.css/animate.css');
 @import url('./navbar.css');
+@import url('./dropDown.css');
 :root{
 --Colors:#797979;
 }
@@ -22,12 +23,12 @@ input {
 .flex{
     display:flex
 }
-body{
-    font:12px"宋体",
+/* body{
+    font:12px "宋体",
     "Arial Narrow",HELVETICA;
     background:#fff;
     -webkit-text-size-adjust:100%;
-} 
+}  */
 :focus {
     outline: none;
 }
@@ -70,4 +71,9 @@ html,body{
 .show{
     display: block;
     animation-duration:.5s;
+}
+.page-header
+{
+    position: relative;
+    z-index: 10;
 }
