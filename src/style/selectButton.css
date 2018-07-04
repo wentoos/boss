@@ -10,14 +10,14 @@
     height: 100%;
     width: 100%;
     /* background: red; */
-    height: 44px;
-    font-size: 12px;
+    height: 0.88rem;
+    font-size: 0.24rem;
     border-bottom: 1px solid #dcdcdc;
     
 }
 .select-button-right-split{
     width: 1px;
-    height: 15px;
+    height: 0.3rem;
     background: var(--bacColors);
     float: right;
 }

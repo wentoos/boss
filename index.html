@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title>react</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta name="format-detection" content="telephone=no">
   
 </head>
@@ -13,16 +12,23 @@
     <script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script>
-      // $('#root').css("height", window.innerHeight + 100);  //强制让内容超过  
+      var dc = document.documentElement;
 
-      //   window.scrollTo(0, 1);
+        var mt = document.createElement("meta");
+        mt.name = "viewport";
+        mt.content = "width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no";
+        dc.firstElementChild.appendChild(mt);
 
-      //   $("#root").css("height", window.innerHeight);  //重置成新高度  
-
-      // addEventListener("load", function () { setTimeout(hideURLbar, 0); }, false);
-      //   function hideURLbar() {
-      //     window.scrollTo(0, 1);
-      //   } 
+        var autoSizie = function () {
+          var dw = dc.clientWidth;
+          var dpr = Math.min(window.devicePixelRatio, 3);
+          //dw / dpr > 750 && (dw = 750 * dpr);
+          window.remScale = dw / 750;
+          dc.style.fontSize = 100 * (dw / 750) + "px";
+          dc.dataset.dpr = dpr;      
+        };
+        autoSizie();
+        window.addEventListener('resize', autoSizie, false);
     </script>
 </body>
 </html>

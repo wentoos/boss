@@ -2,6 +2,18 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const isDebug = process.env.NODE_ENV === 'development'
+const os = require('os');
+var IPv4;
+const nets = os.networkInterfaces()['以太网'] || os.networkInterfaces()['以太网 2'];
+
+if (!nets) {
+  nets = os.networkInterfaces()['WLAN'];//无线网络
+}
+for (var i = 0; i < nets.length; i++) {
+  if (nets[i].family == 'IPv4') {
+    IPv4 = nets[i].address;
+  }
+}
 
 module.exports = {
   mode: isDebug? 'development' : 'production',
@@ -16,7 +28,7 @@ module.exports = {
   },
   devServer: {
     port: 9000, //端口改为9000
-    // host: '192.168.1.111',
+    host: IPv4,
     open: true // 自动打开浏览器，适合懒人
   },
   output: {

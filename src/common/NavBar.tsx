@@ -3,33 +3,42 @@
  * @Author: Wentoo Yu 
  * @Date: 2018-06-25 10:16:45 
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2018-06-28 16:35:49
+ * @Last Modified time: 2018-07-04 11:11:27
  */
 import { CSSTransition } from 'react-transition-group';
 import * as React from 'react'
 
+interface handleProp{
+    leftProp?: React.ReactNode,
+    leftPropEvent?: ()=>{},
+    centerProp?: React.ReactNode,
+    centerPropEvent?: React.SyntheticEvent,
+    rightProp?: React.ReactNode,
+    rightPropEvent?: React.SyntheticEvent,
 
-const transitionStyles: any = {
-    entering: { opacity: 0 },
-    entered: { opacity: 1 },
-};
+}
 
 
-class NavBar extends React.PureComponent {
-
-    componentWillMount() {
-        // setTimeout(()=>this.setState({in:true}))
-
+class NavBar extends React.PureComponent<handleProp> {
+    constructor(prop:any){
+        super(prop);
+        this._leftClick = this._leftClick.bind(this)
     }
-    componentDidMount() {
-        this.setState({ in: true })
+    _leftClick(){
+        this.props.leftPropEvent()
     }
     render() {
         return (
             <div className='navbar'>
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
+                <div className='navbar-left' onClick={this._leftClick}>
+                    {this.props.leftProp}
+                </div>
+                <div className='navbar-center'>
+                    {this.props.centerProp}
+                </div>
+                <div className='navbar-right'>
+                    {this.props.rightProp }
+                </div>
             </div>
 
         );
